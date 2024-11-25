@@ -1,0 +1,5 @@
+games=StarRail,ZenlessZoneZero,AetherGazer,SnowBreak,TowerOfFantasy
+SnowBreak=D:/Snow/snow_launcher.exe
+TowerOfFantasy=D:/Hotta/WmGpLaunch/WmgpLauncher.exe
+#AetherGazer=D:/AetherGazerStarter/AetherGazer/AetherGazer.exe
+backup=StarRail,ZenlessZoneZero,AetherGazer,SnowBreak,TowerOfFantasy
