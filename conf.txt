@@ -1,5 +1,8 @@
-games=StarRail,ZenlessZoneZero,AetherGazer,SnowBreak,TowerOfFantasy
+games=StarRail,ZenlessZoneZero,AetherGazer,SnowBreak,TowerOfFantasy,GuiLongChao,HonkaiImpact3rd,PunishingGrayRaven
 SnowBreak=D:/Snow/snow_launcher.exe
 TowerOfFantasy=D:/Hotta/WmGpLaunch/WmgpLauncher.exe
-#AetherGazer=D:/AetherGazerStarter/AetherGazer/AetherGazer.exe
-backup=StarRail,ZenlessZoneZero,AetherGazer,SnowBreak,TowerOfFantasy
+AetherGazer=D:/AetherGazerStarter/AetherGazer/AetherGazer.exe
+GuiLongChao=D:/GuiLongChao/game/GuiLongChao.exe
+HonkaiImpact3rd=D:/Honkai Impact 3rd/Honkai Impact 3rd Game/BH3.exe
+PunishingGrayRaven=D:/Punishing Gray Raven/Punishing Gray Raven Game/PGR.exe
+backup=StarRail,ZenlessZoneZero,AetherGazer,SnowBreak,TowerOfFantasy,GuiLongChao,HonkaiImpact3rd,PunishingGrayRaven

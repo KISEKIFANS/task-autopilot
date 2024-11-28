@@ -8,7 +8,7 @@
 #000100,AetherGazer_000100.png,click,block,5,点击“深空之眼”
 #000200,steam_03.png,click,block,5,点击“开始游戏”
 
-000300,AetherGazer_000300.png,click,block,30,点击标题画面
+000300,AetherGazer_000300.png,click,block,120,点击标题画面
 000310,MATCH_YES,000700,no_action,2,进入主画面
 
 #循环领各类奖励
@@ -63,6 +63,7 @@
 002900,AetherGazer_002800.png,click,block,10,返回上一级
 003000,AetherGazer_003000.png,click,block,10,领取活动物品
 003100,AetherGazer_000400.png,click,block,10,确认领取
+
 003200,AetherGazer_001400.png,click,block,10,返回主界面
 
 #领取公会奖励
