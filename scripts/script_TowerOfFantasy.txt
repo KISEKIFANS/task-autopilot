@@ -9,9 +9,9 @@
 #000100,TowerOfFantasy_000100.png,click,block,5,点击“幻塔”
 #000200,steam_03.png,click,block,5,点击“开始游戏”
 000300,TowerOfFantasy_000300.png,click,000400,5,点击更新
-000400,TowerOfFantasy_000400.png,click,000500,30,正式开始游戏
-000500,TowerOfFantasy_000500.png,click,block,30,关闭公告
-000600,TowerOfFantasy_000600.png,click,block,30,登录游戏
+000400,TowerOfFantasy_000400.png,click,block,60,正式开始游戏
+000500,TowerOfFantasy_000500.png,click,000600,30,关闭公告
+000600,TowerOfFantasy_000600.png,click,block,10,登录游戏
 
 #领取奖励找回
 000700,TowerOfFantasy_000700.png,click,000800,10,奖励找回
@@ -22,7 +22,7 @@
 000800,TowerOfFantasy_000800.PNG,click,block,5,前往冒险
 000900,TowerOfFantasy_000900.PNG,click,block,5,前往推荐页
 001000,TowerOfFantasy_001000.PNG,click,block,5,前往Mi-A私厨
-001100,TowerOfFantasy_001100.PNG,click,001400,5,品尝
+001100,TowerOfFantasy_001100.PNG,click,001400,2,品尝
 001200,TowerOfFantasy_001200.PNG,click,001400,10,退出品尝结果
 001300,MATCH_YES,001100,block,2,循环品尝
 001400,MATCH_YES,*esc,block,2,退出至上级菜单

@@ -1,11 +1,12 @@
 #000000,MATCH_NO,no_action,block,0,调试语句
 
 #进游戏
+000050,PunishingGrayRaven_000050.png,click,000100,10,有更新则更新
 000100,PunishingGrayRaven_000100.png,click(1200@1150),block,60,登录账号
 000200,MATCH_YES,000300,no_action,5,等待5秒
 000300,PunishingGrayRaven_000100.png,click(1200@1150),block,5,开始游戏
 
-000400,PunishingGrayRaven_000400.png,000700,000500,5,判断是否在主画面
+000400,PunishingGrayRaven_000400.png,000700,000500,2,判断是否在主画面
 000500,MATCH_YES,*esc,no_action,2,领签到奖励、去广告
 000600,MATCH_YES,000400,no_action,2,继续判断
 
@@ -21,7 +22,7 @@
 
 001600,PunishingGrayRaven_000000.png,click(2400@1040),block,5,打开次级菜单
 001700,PunishingGrayRaven_001700.png,click,block,5,进入宿舍
-001800,PunishingGrayRaven_001800.png,click,block,5,完成事件
+001800,PunishingGrayRaven_001800.png,click,002000,5,完成事件
 001900,MATCH_YES,*esc,no_action,2,确认事件结果
 002000,PunishingGrayRaven_002000.png,click,block,5,进入委托
 002100,PunishingGrayRaven_002100.png,click,block,5,一键归队

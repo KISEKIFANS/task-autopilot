@@ -31,6 +31,7 @@
 002400,GuiLongChao_002100.png,click(300@130),block,1,进入聊天任务
 002500,GuiLongChao_002500.png,click,block,5,点击表情
 002600,GuiLongChao_002600.png,click,block,5,发送表情
+002650,MATCH_YES,*esc,block,2,返回上一级
 
 002700,GuiLongChao_002700.png,click,block,5,领取每日任务奖励
 002750,GuiLongChao_002750.png,click,block,5,退出每日任务奖励

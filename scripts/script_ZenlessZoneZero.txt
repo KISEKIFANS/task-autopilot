@@ -1,17 +1,17 @@
 #000000,MATCH_NO,no_action,block,0,调试语句
 
 #进游戏
-000010,MATCH_YES,win,no_action,1,按win键
-000050,steam_01.png,click,block,5,打开“steam”
-000060,steam_04.png,click(-60@0),block,5,打开库
-000070,steam_02.png,click,block,5,打开手游列表
-000100,ZenlessZoneZero_000100.png,click,block,5,点击“绝区零”
-000200,steam_03.png,click,block,5,点击“开始游戏”
+#000010,MATCH_YES,win,no_action,1,按win键
+#000050,steam_01.png,click,block,5,打开“steam”
+#000060,steam_04.png,click(-60@0),block,5,打开库
+#000070,steam_02.png,click,block,5,打开手游列表
+#000100,ZenlessZoneZero_000100.png,click,block,5,点击“绝区零”
+#000200,steam_03.png,click,block,5,点击“开始游戏”
 000300,ZenlessZoneZero_000300.png,click,block,30,点击标题画面
 000350,ZenlessZoneZero_000350.png,click,000400,10,领取登录奖励
 000360,ZenlessZoneZero_000360.png,click,block,10,确认领取结果
 000370,ZenlessZoneZero_000370.png,click,block,10,返回
-000400,ZenlessZoneZero_000400.png,click,block,10,领月卡
+000400,ZenlessZoneZero_000000.png,click(1450@750),block,10,领月卡
 
 #喝咖啡
 000500,ZenlessZoneZero_000500.png,*f1,block,5,前往日活菜单

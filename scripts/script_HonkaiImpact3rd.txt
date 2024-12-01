@@ -10,17 +10,22 @@
 000600,MATCH_YES,*esc,block,2,确认签到结果
 000700,HonkaiImpact3rd_000700.png,click,block,5,领月卡奖励
 000800,MATCH_YES,*esc,block,2,确认领月卡结果
-000900,HonkaiImpact3rd_000900.png,001200,001110,2,判断是否在主画面
-001000,HonkaiImpact3rd_000000.png,click(1275@1275),block,5,退出广告
+000850,HonkaiImpact3rd_000850.png,click,000900,2,判断是否有500水晶领取
+000860,MATCH_YES,*esc,block,2,确认领取结果
+000900,HonkaiImpact3rd_000900.png,001110,001000,2,判断是否在主画面
+#000900,HonkaiImpact3rd_000900.png,001110,001000,2,判断是否在主画面2
+001000,MATCH_YES,*esc,block,2,退出广告
 001100,MATCH_YES,000900,no_action,1,继续判断
 
 001110,HonkaiImpact3rd_000000.png,click(111@266),block,5,进入日活页面
+001115,HonkaiImpact3rd_001115.png,click,block,5,切换至作战任务
 001120,HonkaiImpact3rd_003900.png,click,block,5,领取体力
 001130,MATCH_YES,*esc,no_action,2,确认完成
 001140,MATCH_YES,home,no_action,2,返回主菜单
 
 001200,HonkaiImpact3rd_000900.png,click(-300@0),block,5,进入家园
 001300,HonkaiImpact3rd_001300.png,click,block,5,领取金币
+001350,MATCH_YES,001400,no_action,1,等待1秒
 001400,HonkaiImpact3rd_001400.png,click,block,5,进入打工
 001500,HonkaiImpact3rd_001500.png,click,block,5,领取打工奖励
 001600,MATCH_YES,*esc,no_action,2,确认打工奖励
@@ -42,7 +47,7 @@
 003100,MATCH_YES,*esc,no_action,2,确认紫菜奖励
 003200,HonkaiImpact3rd_003200.png,click,block,5,加1次紫菜关卡挑战次数
 003300,HonkaiImpact3rd_003300.png,click,block,5,确认增加
-003400,HonkaiImpact3rd_002900.png,click,block,5,紫菜关卡一键减负
+003400,HonkaiImpact3rd_003400.png,click,block,5,紫菜关卡一键减负
 003500,HonkaiImpact3rd_003000.png,click,block,5,确认减负
 003600,MATCH_YES,*esc,no_action,2,确认紫菜奖励
 003700,MATCH_YES,home,no_action,2,返回主菜单

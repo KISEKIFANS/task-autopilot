@@ -28,7 +28,7 @@
 
 #循环去广告
 #000750,MATCH_YES,click(*2100@*1680),no_action,2,去广告
-000750,AetherGazer_000000.png,click(1360@1360),block,5,去广告
+000750,AetherGazer_000000.png,click(1360@1300),block,5,去广告
 
 #购买免费体力
 000800,AetherGazer_001500.png,click(-900@90),000750,5,进入商店

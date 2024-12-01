@@ -1,12 +1,12 @@
 #000000,MATCH_NO,no_action,block,0,调试语句
 
 #进游戏
-000010,MATCH_YES,win,no_action,1,按win键
-000050,steam_01.png,click,block,5,打开“steam”
-000060,steam_04.png,click(-60@0),block,5,打开库
-000070,steam_02.png,click,block,5,打开手游列表
-000100,StarRail_000100.png,click,block,5,点击“星穹铁道”
-000200,steam_03.png,click,block,5,点击“开始游戏”
+#000010,MATCH_YES,win,no_action,1,按win键
+#000050,steam_01.png,click,block,5,打开“steam”
+#000060,steam_04.png,click(-60@0),block,5,打开库
+#000070,steam_02.png,click,block,5,打开手游列表
+#000100,StarRail_000100.png,click,block,5,点击“星穹铁道”
+#000200,steam_03.png,click,block,5,点击“开始游戏”
 000300,StarRail_000300.png,click,block,30,点击标题画面
 000400,StarRail_000400.png,click,000600,10,领月卡
 000450,MATCH_YES,000500,no_action,2,延迟2秒
