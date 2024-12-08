@@ -2,7 +2,10 @@
 
 #进游戏
 000100,GuiLongChao_000100.png,click,block,60,退出公告
-000200,GuiLongChao_000200.png,click,block,5,开始游戏
+000200,GuiLongChao_000200.png,click,block,10,开始游戏
+000250,GuiLongChao_000250.png,click(0@250),block,10,领签到奖励
+000260,MATCH_YES,*esc,block,2,确认结果
+000270,MATCH_YES,*esc,block,2,确认结果
 000300,GuiLongChao_000300.png,*f1,block,5,进入日活菜单
 000400,GuiLongChao_000400.png,000700,000500,2,寻找5次宝库任务
 

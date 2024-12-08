@@ -11,6 +11,7 @@
 000600,MATCH_YES,000400,no_action,2,继续判断
 
 000700,PunishingGrayRaven_000400.png,click,block,5,进入日活页面
+000700,PunishingGrayRaven_000000.png,click(250@650),block,5,进入每日任务
 000800,PunishingGrayRaven_000800.png,click,block,5,领取体力
 000900,MATCH_YES,*esc,no_action,2,确认结果
 001000,PunishingGrayRaven_001000.png,click(80@0),block,5,增加体力

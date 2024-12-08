@@ -51,6 +51,10 @@ def load_conf_file():
         if line_key == 'games':
             for ele in line_value.split(','):
                 Conf.games.append(ele.strip())
+        elif line_key == 'games_exclude':
+            for ele in line_value.split(','):
+                if Conf.games.count(ele.strip()) > 0:
+                    Conf.games.remove(ele.strip())
         else:
             Conf.game_launcher_dict[line_key] = line_value.strip()
     print_and_log(f"配置文件加载完成")
@@ -278,4 +282,5 @@ def process_mission(seq_start):
                     press_key(action_img_found)
                     continue
 
+    #kill client if exists
     return "ALL_MISSION_COMPLETED"

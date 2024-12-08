@@ -41,7 +41,7 @@
 002800,StarRail_002800.png,click,block,10,领取最终奖励
 002900,StarRail_002900.png,click,block,10,关闭结果
 003000,MATCH_YES,*esc,block,1,退出至主画面
-003100,StarRail_003100.png,*f2,block,10,点击大月卡
+003100,StarRail_003100.png,*f2,003400,10,点击大月卡
 003200,StarRail_003200.png,click,block,10,点击任务
 003300,StarRail_003300.png,click,block,10,一键领取奖励
 003400,MATCH_YES,alt+f4,block,1,退出游戏

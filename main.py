@@ -14,4 +14,5 @@ for game in Conf.games:
         else:
             mission_result = process_mission(mission_result)
     print_and_log(f'{game}脚本所有任务完成，执行完毕')
+    time.sleep(2)
 

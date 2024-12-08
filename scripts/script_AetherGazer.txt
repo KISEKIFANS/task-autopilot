@@ -59,8 +59,8 @@
 002500,AetherGazer_002500.png,click,block,10,扫荡
 002600,AetherGazer_002600.png,click,block,10,确认扫荡
 002700,AetherGazer_002700.png,click,block,10,确认扫荡结果
-002800,AetherGazer_002800.png,click,block,10,返回上一级
-002900,AetherGazer_002800.png,click,block,10,返回上一级
+002800,AetherGazer_002800.png,click(-150@0),block,10,返回上一级
+002900,AetherGazer_002800.png,click(-150@0),block,10,返回上一级
 003000,AetherGazer_003000.png,click,block,10,领取活动物品
 003100,AetherGazer_000400.png,click,block,10,确认领取
 
@@ -78,25 +78,25 @@
 003810,AetherGazer_001500.png,click(-360@60),block,5,进入游园街
 003820,AetherGazer_003820.png,click(-400@0,block),5,打开游园街面板
 003830,AetherGazer_003830.png,click,block,5,领取红币
-003840,AetherGazer_003840.png,click(400@0),block,5,完成昨日派遣任务
+003840,AetherGazer_003840.png,click(400@0),003860,5,完成昨日派遣任务
 003850,AetherGazer_003850.png,click,block,5,确认完成
 003860,AetherGazer_003860.png,click,003895,5,前往今日派遣任务
 003870,AetherGazer_003870.png,click,block,5,快速选中人物
 003880,AetherGazer_003880.png,click,block,5,派遣出发
 003890,MATCH_YES,003860,no_action,2,循环派遣
 003895,AetherGazer_003895.png,click,block,5,退出派遣菜单
-003896,AetherGazer_002800.png,click,block,5,返回上一级
-003897,AetherGazer_002800.png,click,block,5,返回主菜单
+003896,AetherGazer_003896.png,*esc,block,2,返回上一级
+003897,AetherGazer_003896.png,*esc,block,2,返回主菜单
 
 #领取日活奖励
 003900,AetherGazer_001500.png,*f1,block,5,进入日活画面
 004000,AetherGazer_004000.png,click,block,5,弥弥尔观测站
 004050,AetherGazer_004050.png,click(0@200),004100,5,尝试寻找周一提示
 004100,AetherGazer_004100.png,click,block,5,一键领取
-004200,AetherGazer_004200.png,click,004800,5,确认探索
+004200,AetherGazer_004200.png,click(200@0),004800,5,确认探索
 004300,MATCH_YES,004200,no_action,2,确认探索
 004800,AetherGazer_004800.png,click,block,5,一键派遣
-004900,AetherGazer_002800.png,click,block,10,返回上一级
+004900,AetherGazer_003896.png,click,block,10,返回上一级
 005000,AetherGazer_005000.png,click,block,10,完成日活
 005100,AetherGazer_000400.png,click,block,10,确认领取
 005200,AetherGazer_005000.png,click,block,10,完成日活

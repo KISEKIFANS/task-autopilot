@@ -18,7 +18,7 @@
 001100,MATCH_YES,000900,no_action,1,继续判断
 
 001110,HonkaiImpact3rd_000000.png,click(111@266),block,5,进入日活页面
-001115,HonkaiImpact3rd_001115.png,click,block,5,切换至作战任务
+001115,HonkaiImpact3rd_001115.png,click,001120,5,切换至作战任务
 001120,HonkaiImpact3rd_003900.png,click,block,5,领取体力
 001130,MATCH_YES,*esc,no_action,2,确认完成
 001140,MATCH_YES,home,no_action,2,返回主菜单
@@ -55,7 +55,7 @@
 003800,HonkaiImpact3rd_000000.png,click(111@266),block,5,进入日活页面
 003900,HonkaiImpact3rd_003900.png,click,block,5,完成所有每日任务
 004000,MATCH_YES,*esc,no_action,2,确认完成
-004100,HonkaiImpact3rd_004100.png,click,block,5,领取每日任务奖励
+004100,HonkaiImpact3rd_004100.png,click,block,20,领取每日任务奖励
 004200,MATCH_YES,*esc,no_action,2,确认奖励
 004300,MATCH_YES,home,no_action,2,返回主菜单
 
