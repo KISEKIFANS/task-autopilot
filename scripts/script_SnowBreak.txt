@@ -15,7 +15,7 @@
 000330,MATCH_YES,000340,block,3,等待三秒
 000340,SnowBreak_000300.png,click,block,10,从标题画面进入游戏
 000341,MATCH_YES,000345,no_action,2,等待两秒
-000345,SnowBreak_000345.png,click,000350,5,领签到奖励
+000345,SnowBreak_000345.png,click,000360,5,领签到奖励
 000346,MATCH_YES,click(*2000@*1680),no_action,1,退出领签到奖励
 #000350,SnowBreak_000350.png,click(0@500),block,10,领月卡奖励
 000360,MATCH_YES,click(*2000@*1680),no_action,1,退出领月卡奖励、去广告
@@ -90,7 +90,7 @@
 003700,SnowBreak_003700.png,click,block,3,领取日活奖励
 003800,MATCH_YES,*esc,block,2,退出购买结果
 003900,SnowBreak_001100.png,click,block,3,返回主页
-003950,SnowBreak_003950.png,click,block,3,进入大月卡页面
+003950,SnowBreak_003950.png,click,004000,3,进入大月卡页面
 003960,SnowBreak_003960.png,click,block,3,进入大月卡每日任务
 003970,SnowBreak_003970.png,click,block,3,领取大月卡每日奖励
 003980,MATCH_YES,*esc,block,2,退出结果

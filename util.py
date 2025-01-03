@@ -34,13 +34,25 @@ def init(new_game):
         print_and_log(f'检测到脚本文件夹{Conf.script_path}不存在，创建完成')
     if not os.path.exists(Conf.script_file):
         print_and_log(f'检测到脚本文件{Conf.script_file}不存在，程序退出')
-        exit()
+        return "ERR_SCRIPT_NOT_FOUND"
     else:
         print_and_log(f'脚本文件为：{Conf.script_file}')
     if Conf.game_launcher:
-        subprocess.Popen(Conf.game_launcher)
+        try_count = 0
+        while try_count <3 :
+            try:
+                subprocess.Popen(Conf.game_launcher)
+                break
+            except Exception as e:
+                print_and_log(f"未成功打开游戏，稍后重试: {e}")
+                time.sleep(2)
+                try_count += 1
+        if try_count == 3:
+            print_and_log(f'重试3次后未成功打开游戏，程序退出')
+            return "ERR_GAME_NOT_RUNNING"
     seqs = get_all_seq()
     print_and_log(f'初始化完成，第一个任务为{seqs[0]}')
+    Conf.game_status_dict[Conf.game] = seqs[0]
     return seqs[0]
 
 def load_conf_file():

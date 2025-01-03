@@ -17,9 +17,10 @@
 000500,ZenlessZoneZero_000500.png,*f1,block,5,前往日活菜单
 000600,ZenlessZoneZero_000600.png,click(0@280),block,5,传送去喝咖啡
 000700,ZenlessZoneZero_000700.png,click,block,5,确认传送
-000800,ZenlessZoneZero_000800.png,click,block,5,选择普通咖啡
-000900,ZenlessZoneZero_000900.png,click,block,5,确认选择普通咖啡
+000800,ZenlessZoneZero_000800.png,click,block,5,选择咖啡
+000900,ZenlessZoneZero_000900.png,click,block,5,确认选择咖啡
 001000,ZenlessZoneZero_001000.png,click,block,10,确认喝咖啡结果
+001050,MATCH_YES,*esc,block,2,退出传送提示
 
 #录像店
 001100,ZenlessZoneZero_000500.png,*f1,block,5,前往日活菜单
@@ -52,7 +53,7 @@
 003000,MATCH_YES,*esc,block,1,退出奖励结果
 003100,MATCH_YES,*esc,block,1,退出至主界面
 003200,MATCH_YES,*f3,block,1,按F3前往大月卡菜单
-003300,ZenlessZoneZero_003300.png,click,block,5,前往成长任务
+003300,ZenlessZoneZero_003300.png,click,003500,5,前往成长任务
 003400,ZenlessZoneZero_003400.png,click,block,5,全部领取
 003500,MATCH_YES,alt+f4,block,1,退出游戏
 

@@ -1,4 +1,4 @@
-games=StarRail,SnowBreak,ZenlessZoneZero,AetherGazer,HonkaiImpact3rd,PunishingGrayRaven,TowerOfFantasy
+games=GuiLongChao
 games_exclude=
 StarRail=D:/Star Rail/Game/StarRail.exe
 ZenlessZoneZero=D:/ZenlessZoneZero/ZenlessZoneZero Game/ZenlessZoneZero.exe

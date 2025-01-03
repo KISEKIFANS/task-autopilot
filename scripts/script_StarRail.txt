@@ -1,4 +1,4 @@
-#000000,MATCH_NO,no_action,block,0,调试语句
+000000,MATCH_YES,003400,block,5,调试语句
 
 #进游戏
 #000010,MATCH_YES,win,no_action,1,按win键

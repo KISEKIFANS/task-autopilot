@@ -5,14 +5,11 @@ date = time.strftime('%Y-%m-%d', time.localtime())
 class Conf:
     mode = "normal"  # step
     game="empty"
-    games=[] #SnowBreak,ZenlessZoneZero,AetherGazer,TowerOfFantasy,StarRail
+    games=[]
     score_threshold = 0.05
 
-    game_launcher_dict = {
-        # "SnowBreak" : "D:/Snow/snow_launcher.exe",
-        # "TowerOfFantasy" : "D:/Hotta/WmGpLaunch/WmgpLauncher.exe",
-        # "AetherGazer" : "D:/AetherGazerStarter/AetherGazer/AetherGazer.exe"
-    }
+    game_status_dict = {}
+    game_launcher_dict = {}
     screenshot_path = "./screenshot"
     script_path="./scripts"
     log_path="./logs"
