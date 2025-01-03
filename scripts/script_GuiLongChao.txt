@@ -3,7 +3,9 @@
 #进游戏
 000100,GuiLongChao_000100.png,click,block,60,退出公告
 000200,GuiLongChao_000200.png,click,block,10,开始游戏
-000250,GuiLongChao_000250.png,click(0@250),block,10,领签到奖励
+000210,GuiLongChao_000210.png,click(0@400),block,10,领月卡奖励
+000220,MATCH_YES,*esc,block,2,确认结果
+000250,GuiLongChao_000250.png,click,000300,10,领签到奖励
 000260,MATCH_YES,*esc,block,2,确认结果
 000270,MATCH_YES,*esc,block,2,确认结果
 000300,GuiLongChao_000300.png,*f1,block,5,进入日活菜单
@@ -56,6 +58,6 @@
 004100,MATCH_YES,*esc,block,2,返回上一级
 004200,MATCH_YES,*esc,block,2,返回上一级
 004300,MATCH_YES,*f4,block,2,进入大月卡页面
-004400,GuiLongChao_004400.png,click,block,5,完成大月卡任务
+004400,GuiLongChao_004400.png,click,004500,5,完成大月卡任务
 004500,MATCH_YES,*alt+*f4,block,2,退出游戏
 004600,MATCH_YES,*enter,block,2,确认退出

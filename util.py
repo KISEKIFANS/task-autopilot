@@ -34,34 +34,86 @@ def init(new_game):
         print_and_log(f'检测到脚本文件夹{Conf.script_path}不存在，创建完成')
     if not os.path.exists(Conf.script_file):
         print_and_log(f'检测到脚本文件{Conf.script_file}不存在，程序退出')
-        exit()
+        return "ERR_SCRIPT_NOT_FOUND"
     else:
         print_and_log(f'脚本文件为：{Conf.script_file}')
     if Conf.game_launcher:
-        subprocess.Popen(Conf.game_launcher)
+        try_count = 0
+        while try_count <3 :
+            try:
+                subprocess.Popen(Conf.game_launcher)
+                break
+            except Exception as e:
+                print_and_log(f"未成功打开游戏，稍后重试: {e}")
+                time.sleep(2)
+                try_count += 1
+        if try_count == 3:
+            print_and_log(f'重试3次后未成功打开游戏，程序退出')
+            return "ERR_GAME_NOT_RUNNING"
     seqs = get_all_seq()
     print_and_log(f'初始化完成，第一个任务为{seqs[0]}')
+    Conf.game_script_status_dict[Conf.game] = 'RUNNING'
     return seqs[0]
 
 def load_conf_file():
+
     with open(Conf.conf_file, "r", encoding='utf-8') as file:
         lines = file.readlines()
-    for line in lines:
-        line_key, line_value = line.split('=')
-        if line_key == 'games':
-            for ele in line_value.split(','):
-                Conf.games.append(ele.strip())
-        elif line_key == 'games_exclude':
-            for ele in line_value.split(','):
-                if Conf.games.count(ele.strip()) > 0:
-                    Conf.games.remove(ele.strip())
-        else:
-            Conf.game_launcher_dict[line_key] = line_value.strip()
-    print_and_log(f"配置文件加载完成")
-    print_and_log(f"游戏：{Conf.games}")
-    print_and_log(f"程序目录：{Conf.game_launcher_dict}")
-    #Conf.reload()
 
+    load_area = "NOT_AREA"
+    load_global_dict={}
+    load_game_dict={}
+
+    # load txt to dict
+    for line in lines:
+        line = line.strip()
+        if line.startswith("#") or line == "":
+            continue
+        if line.startswith("["):
+            load_area = line
+        else:
+            line_key, line_value = line.split('#')[0].split('=')
+            if load_area=='[global]':
+               load_global_dict[line_key.strip()]=line_value.strip()
+               #rint(f"global:key[{line_key.strip()}], value[{line_value.strip()}]")
+            if load_area=='[game]':
+               load_game_dict[line_key.strip()]=line_value.strip()
+               #print(f"game:key[{line_key.strip()}], value[{line_value.strip()}]")
+
+
+    # load dict to conf
+    # for key in load_game_dict.keys():
+    #     Conf.games.append(key)
+    Conf.exec_mode = load_global_dict.get('exec_mode')
+    Conf.capture_mode = load_global_dict.get('capture_mode')
+    Conf.score_threshold = float(load_global_dict.get('score_threshold'))
+    Conf.screenshot_path = load_global_dict.get('screenshot_path')
+    Conf.log_path = load_global_dict.get('log_path')
+    Conf.log_file = f"{Conf.log_path}/log.{date}.txt"
+    Conf.script_path = load_global_dict.get('script_path')
+    Conf.game_launcher_dict = dict(load_game_dict)
+
+    for key in load_game_dict.keys():
+        Conf.games.append(key)
+
+    for ele in load_global_dict["games_exclude"].split(','):
+        if Conf.games.count(ele) > 0:
+            Conf.games.remove(ele)
+            Conf.game_launcher_dict.pop(ele)
+
+    for ele in Conf.games:
+        Conf.game_script_status_dict[ele]='READY'
+
+    print_and_log(f"配置文件加载完成")
+    print_and_log(f"执行模式：{Conf.exec_mode}")
+    print_and_log(f"截图模式：{Conf.capture_mode}")
+    print_and_log(f"评分阈值：{Conf.score_threshold}")
+    print_and_log(f"截图文件夹路径：{Conf.screenshot_path}")
+    print_and_log(f"日志文件夹路径：{Conf.log_path}")
+    print_and_log(f"脚本文件夹路径：{Conf.script_path}")
+    print_and_log(f"游戏：{Conf.games}")
+    print_and_log(f"游戏程序目录：{Conf.game_launcher_dict}")
+    #print(f"游戏脚本执行状态：{Conf.game_script_status_dict}")
 
 def load_script_file():
     with open(Conf.script_file, "r", encoding='utf-8') as file:
@@ -201,7 +253,7 @@ def process_mission(seq_start):
 
         seq = line.split(",")[0]
 
-        if Conf.mode == "step":
+        if Conf.exec_mode == "step":
             input(f"当前处于逐步模式，回车以继续执行任务{seq}")
 
         if seq == seq_start:
@@ -221,10 +273,14 @@ def process_mission(seq_start):
             find_img_result = find_img(seq, img_target, timeout, mission)
             if find_img_result == "IMG_TARGET_NOTFOUND" or find_img_result == "DIRECT_NO":
                 if action_img_not_found == 'block':
-                    seq_new = input("程序已挂起，请调整脚本及图片。调整完毕后输入任务序号以继续执行（或输入exit退出）： ")
-                    log(f"程序已挂起，请调整脚本及图片。调整完毕后输入任务序号以继续执行（或输入exit退出）： {seq_new}")
+                    seq_new = input(f"程序已挂起，请调整脚本及图片。调整完毕后输入任务序号以继续执行（或直接回车执行最近一次任务{seq}，或输入exit退出）： ")
+                    log(f"程序已挂起，请调整脚本及图片。调整完毕后输入任务序号以继续执行（或直接回车执行最近一次任务{seq}，或输入exit退出）： {seq_new}")
                     seqs = get_all_seq()
-                    while seqs.count(seq_new) <= 0 and seq_new != "exit":
+                    if seq_new == "exit" :
+                        return "SCRIPT_ABORTED"
+                    if seq_new == "" :
+                        return seq
+                    while seqs.count(seq_new) <= 0 :
                         seq_new = input(f"任务{seq_new}不存在，请重新输入： ")
                         log(f"任务不存在，请重新输入：  {seq_new}")
                     return seq_new

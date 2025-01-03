@@ -1,11 +1,23 @@
-games=StarRail,SnowBreak,ZenlessZoneZero,AetherGazer,HonkaiImpact3rd,PunishingGrayRaven,TowerOfFantasy
-games_exclude=
-StarRail=D:/Star Rail/Game/StarRail.exe
-ZenlessZoneZero=D:/ZenlessZoneZero/ZenlessZoneZero Game/ZenlessZoneZero.exe
-SnowBreak=D:/Snow/snow_launcher.exe
-TowerOfFantasy=D:/Hotta/WmGpLaunch/WmgpLauncher.exe
-AetherGazer=D:/AetherGazerStarter/AetherGazer/AetherGazer.exe
-GuiLongChao=D:/GuiLongChao/game/GuiLongChao.exe
-HonkaiImpact3rd=D:/Honkai Impact 3rd/Honkai Impact 3rd Game/BH3.exe
-PunishingGrayRaven=D:/Punishing Gray Raven/Punishing Gray Raven Game/PGR.exe
-backup_str=StarRail,SnowBreak,ZenlessZoneZero,AetherGazer,HonkaiImpact3rd,PunishingGrayRaven,GuiLongChao,TowerOfFantasy
+[global]
+exec_mode = normal        # normal step
+capture_mode = disk       # disk ram
+games_exclude =
+backup=SnowBreak,ZenlessZoneZero,PunishingGrayRaven,AetherGazer,HonkaiImpact3rd,GuiLongChao,TowerOfFantasy,StarRail
+
+# The follows are NOT recommended to modify
+score_threshold = 0.05
+screenshot_path = ./screenshot
+script_path = ./scripts
+log_path = ./logs
+
+[game]
+SnowBreak=D:/Games/Snow/snow_launcher.exe
+ZenlessZoneZero=D:/Games/ZenlessZoneZero/ZenlessZoneZero Game/ZenlessZoneZero.exe
+PunishingGrayRaven=D:/Games/Punishing Gray Raven/Punishing Gray Raven Game/PGR.exe
+AetherGazer=D:/Games/AetherGazerStarter/AetherGazer/AetherGazer.exe
+HonkaiImpact3rd=D:/Program Files/miHoYo Launcher/games/Honkai Impact 3rd Game/BH3.exe
+GuiLongChao=D:/Games/GuiLongChao/game/GuiLongChao.exe
+TowerOfFantasy=D:/Games/Hotta/WmGpLaunch/WmgpLauncher.exe
+StarRail=D:/Games/Star Rail/Game/StarRail.exe
+
+#games=SnowBreak,ZenlessZoneZero,PunishingGrayRaven,AetherGazer,HonkaiImpact3rd,GuiLongChao,TowerOfFantasy,StarRail

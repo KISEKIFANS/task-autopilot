@@ -4,13 +4,13 @@
 000050,PunishingGrayRaven_000050.png,click,000100,10,有更新则更新
 000100,PunishingGrayRaven_000100.png,click(1200@1150),block,60,登录账号
 000200,MATCH_YES,000300,no_action,5,等待5秒
-000300,PunishingGrayRaven_000100.png,click(1200@1150),block,5,开始游戏
+000300,PunishingGrayRaven_000100.png,click(1200@1150),000400,5,开始游戏
 
 000400,PunishingGrayRaven_000400.png,000700,000500,2,判断是否在主画面
 000500,MATCH_YES,*esc,no_action,2,领签到奖励、去广告
 000600,MATCH_YES,000400,no_action,2,继续判断
 
-000700,PunishingGrayRaven_000400.png,click,block,5,进入日活页面
+000700,PunishingGrayRaven_000400.png,click,000500,5,进入日活页面
 000700,PunishingGrayRaven_000000.png,click(250@650),block,5,进入每日任务
 000800,PunishingGrayRaven_000800.png,click,block,5,领取体力
 000900,MATCH_YES,*esc,no_action,2,确认结果
@@ -31,6 +31,7 @@
 002300,PunishingGrayRaven_002100.png,click,block,5,一键派遣
 002400,MATCH_YES,*esc,no_action,2,退出至宿舍
 002500,PunishingGrayRaven_002500.png,click,block,5,点击任务
+002550,PunishingGrayRaven_002550.png,click,002600,3,切换至每日任务
 002600,PunishingGrayRaven_002600.png,click,block,5,一键领取奖励
 002700,MATCH_YES,*esc,no_action,2,确认奖励结果
 002800,MATCH_YES,*esc,no_action,2,退出至宿舍
@@ -55,8 +56,15 @@
 004500,MATCH_YES,home,no_action,2,退出至主画面
 
 005100,PunishingGrayRaven_000000.png,click(2300@700),block,5,进入战斗菜单
-005200,PunishingGrayRaven_005200.png,click,block,5,进入限时活动
+005200,PunishingGrayRaven_005200.png,005290,005250,3,尝试进入限时活动
+
+005250,PunishingGrayRaven_005250.png,click,block,5,进入资源
+005260,PunishingGrayRaven_005260.png,click,block,5,进入拟战场域
+005270,MATCH_YES,005350,no_action,5,执行作战任务
+
+005290,PunishingGrayRaven_005200.png,click,block,5,进入限时活动
 005300,PunishingGrayRaven_005300.png,click,block,5,进入拟战场域
+
 005350,PunishingGrayRaven_005350.png,click,block,5,MAX次数
 005400,PunishingGrayRaven_005400.png,click,block,5,自动作战
 005500,MATCH_YES,*j,no_action,2,确认作战结果

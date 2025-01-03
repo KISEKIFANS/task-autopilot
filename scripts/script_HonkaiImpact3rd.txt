@@ -6,14 +6,14 @@
 000200,HonkaiImpact3rd_000200.png,000500,000300,2,判断是否在签到页面
 000300,HonkaiImpact3rd_000000.png,click(1275@1275),block,5,退出广告
 000400,MATCH_YES,000200,no_action,1,继续判断
-000500,HonkaiImpact3rd_000200.png,click,block,5,领签到奖励
+000500,HonkaiImpact3rd_000200.png,click,000700,5,领签到奖励
 000600,MATCH_YES,*esc,block,2,确认签到结果
+000650,MATCH_YES,000500,no_action,2,继续领签到奖励
 000700,HonkaiImpact3rd_000700.png,click,block,5,领月卡奖励
 000800,MATCH_YES,*esc,block,2,确认领月卡结果
 000850,HonkaiImpact3rd_000850.png,click,000900,2,判断是否有500水晶领取
 000860,MATCH_YES,*esc,block,2,确认领取结果
 000900,HonkaiImpact3rd_000900.png,001110,001000,2,判断是否在主画面
-#000900,HonkaiImpact3rd_000900.png,001110,001000,2,判断是否在主画面2
 001000,MATCH_YES,*esc,block,2,退出广告
 001100,MATCH_YES,000900,no_action,1,继续判断
 
@@ -22,6 +22,10 @@
 001120,HonkaiImpact3rd_003900.png,click,block,5,领取体力
 001130,MATCH_YES,*esc,no_action,2,确认完成
 001140,MATCH_YES,home,no_action,2,返回主菜单
+
+001150,HonkaiImpact3rd_000900.png,001200,001160,3,判断是否在主画面
+001160,MATCH_YES,*esc,block,2,退出广告
+001170,MATCH_YES,001150,no_action,1,继续判断
 
 001200,HonkaiImpact3rd_000900.png,click(-300@0),block,5,进入家园
 001300,HonkaiImpact3rd_001300.png,click,block,5,领取金币
@@ -55,14 +59,14 @@
 003800,HonkaiImpact3rd_000000.png,click(111@266),block,5,进入日活页面
 003900,HonkaiImpact3rd_003900.png,click,block,5,完成所有每日任务
 004000,MATCH_YES,*esc,no_action,2,确认完成
-004100,HonkaiImpact3rd_004100.png,click,block,20,领取每日任务奖励
+004100,HonkaiImpact3rd_000000.png,click(1700@1300),block,3,领取每日任务奖励
 004200,MATCH_YES,*esc,no_action,2,确认奖励
 004300,MATCH_YES,home,no_action,2,返回主菜单
 
 004400,HonkaiImpact3rd_004400.png,004500,005800,2,判断是否有新手任务
 004500,HonkaiImpact3rd_004400.png,click,block,5,进入迎新手册
-004600,HonkaiImpact3rd_004600.png,click,block,5,切换至训练计划页
-004700,HonkaiImpact3rd_004700.png,click,block,5,领取水晶1
+#004600,HonkaiImpact3rd_004600.png,click,block,5,切换至训练计划页
+004700,HonkaiImpact3rd_004700.png,click,004600,5,领取水晶1
 004800,MATCH_YES,*esc,no_action,2,确认奖励
 004900,HonkaiImpact3rd_004700.png,click,block,5,领取水晶2
 005000,MATCH_YES,*esc,no_action,2,确认奖励
