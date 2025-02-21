@@ -1,7 +1,7 @@
 [global]
 exec_mode = normal        # normal step
 capture_mode = disk       # disk ram
-games_exclude =
+games_exclude = ZenlessZoneZero,PunishingGrayRaven,AetherGazer,HonkaiImpact3rd,GuiLongChao,TowerOfFantasy,StarRail
 backup=SnowBreak,ZenlessZoneZero,PunishingGrayRaven,AetherGazer,HonkaiImpact3rd,GuiLongChao,TowerOfFantasy,StarRail
 
 # The follows are NOT recommended to modify
@@ -19,5 +19,3 @@ HonkaiImpact3rd=D:/Program Files/miHoYo Launcher/games/Honkai Impact 3rd Game/BH
 GuiLongChao=D:/Games/GuiLongChao/game/GuiLongChao.exe
 TowerOfFantasy=D:/Games/Hotta/WmGpLaunch/WmgpLauncher.exe
 StarRail=D:/Games/Star Rail/Game/StarRail.exe
-
-#games=SnowBreak,ZenlessZoneZero,PunishingGrayRaven,AetherGazer,HonkaiImpact3rd,GuiLongChao,TowerOfFantasy,StarRail

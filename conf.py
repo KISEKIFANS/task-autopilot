@@ -10,7 +10,7 @@ class Conf:
     capture_mode = ""
     score_threshold = 0
     screenshot_path = ""
-    log_path="./logs" #
+    log_path = ''
     log_file = f"{log_path}/log.{date}.txt" #
     games = []
     games_exclude = []
