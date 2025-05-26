@@ -69,6 +69,7 @@ for game in Conf.games:
         game_retry.append(game)
 if SCRIPTS_NEED_RETRY=="NO":
     Util.print_and_log(f'本日所有脚本执行完毕，无脚本需要重试，按回车键退出')
+    Util.send_qq_channel_message(f'本日所有手游日活脚本执行完毕')
 else:
     retry_count=1
     while retry_count < 4 and SCRIPTS_NEED_RETRY=="YES":

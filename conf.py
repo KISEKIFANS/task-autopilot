@@ -17,6 +17,10 @@ class Conf:
     game_script_status_dict = {} # READY RUNNING WAIT_TO_RETRY ERR_OCCURRED COMPLETED
     game_launcher_dict = {}
 
+    bot_appid = ""
+    bot_secret = ""
+    bot_channel_id = ""
+
     script_path = ""
     game = ""
     game_launcher = ""

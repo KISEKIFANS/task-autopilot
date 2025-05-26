@@ -4,8 +4,11 @@ import os
 import pydirectinput
 from conf import *
 import subprocess
+import requests
+import json
 
 class Util:
+
 
     @staticmethod
     def print_and_log(txt):
@@ -19,6 +22,33 @@ class Util:
         current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
         log_writer.writelines(f'[{current_time}] {txt}\n')
         log_writer.flush()
+
+    @staticmethod
+    def send_qq_channel_message(txt):
+        try:
+            #get token
+            url = "https://bots.qq.com/app/getAppAccessToken"
+            header = {'Content-Type': 'application/json'}
+            data = {"appId": Conf.bot_appid,
+                    "clientSecret": Conf.bot_secret
+                    }
+            access_token = json.loads(requests.post(url=url, headers=header, data=json.dumps(data)).text)[
+                "access_token"]
+
+            #use token to send qq channel message
+            url = f"https://api.sgroup.qq.com/channels/{Conf.bot_channel_id}/messages"
+            header = {'Content-Type': 'application/json',
+                  'Authorization': f'QQBot {access_token}'
+                  }
+            data = {
+                "content": txt,
+                "msg_type": 0
+            }
+            result = requests.post(url=url, headers=header, data=json.dumps(data)).text
+            Util.print_and_log(result)
+
+        except Exception as e:
+            Util.print_and_log("ERR in send qq channel message: " + str(e))
 
     @staticmethod
     def init(new_game):
@@ -91,6 +121,10 @@ class Util:
         Conf.log_file = f"{Conf.log_path}/log.{date}.txt"
         Conf.script_path = load_global_dict.get('script_path')
         Conf.game_launcher_dict = dict(load_game_dict)
+
+        Conf.bot_appid = load_global_dict.get("bot_appid")
+        Conf.bot_secret = load_global_dict.get("bot_secret")
+        Conf.bot_channel_id = load_global_dict.get("bot_channel_id")
 
         for key in load_game_dict.keys():
             Conf.games.append(key)
@@ -203,6 +237,14 @@ class Util:
         pyautogui.mouseUp(point_06[0], point_06[1])
 
     @staticmethod
+    def mouse_slip(position, dis_x, dis_y):
+        point_start = int(position[0]), int(position[1])
+        point_end = point_start[0] + dis_x, point_start[1] + dis_y
+        pyautogui.mouseDown(point_start[0], point_start[1])
+        pyautogui.moveTo(point_end[0], point_end[1], duration=0.5)
+        pyautogui.mouseUp(point_end[0], point_end[1])
+
+    @staticmethod
     def press_key(key):
         key_press = key.split('+')[0]
         key_next = ""
@@ -285,6 +327,7 @@ class Util:
                 find_img_result = Util.find_img(seq, img_target, timeout, mission)
                 if find_img_result == "IMG_TARGET_NOTFOUND" or find_img_result == "DIRECT_NO":
                     if action_img_not_found == 'block':
+                        Util.send_qq_channel_message(f'执行{Conf.game}日活脚本的任务{seq}时无法匹配到图片，请进行相关检查~')
                         seq_new = input(f"程序已挂起，请调整脚本及图片。调整完毕后输入任务序号以继续执行（或直接回车执行最近一次任务{seq}，或输入exit退出）： ")
                         Util.log(f"程序已挂起，请调整脚本及图片。调整完毕后输入任务序号以继续执行（或直接回车执行最近一次任务{seq}，或输入exit退出）： {seq_new}")
                         seqs = Util.get_all_seq()
@@ -346,7 +389,15 @@ class Util:
                         dis_x = int(distance.split('@')[0])
                         dis_y = int(distance.split('@')[1])
                         Util.mouse_slip_around(find_img_result, dis_x, dis_y)
+                        continue
+                    elif action_img_found.startswith('slip'):
+                        distance = action_img_found.split('(')[1].split(')')[0]
+                        dis_x = int(distance.split('@')[0])
+                        dis_y = int(distance.split('@')[1])
+                        Util.mouse_slip(find_img_result, dis_x, dis_y)
+                        continue
                     else:
+                        #press key
                         Util.press_key(action_img_found)
                         continue
 

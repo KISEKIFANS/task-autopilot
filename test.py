@@ -3,6 +3,10 @@ import subprocess
 import time
 import os
 
+from util import *
+Util.load_conf_file()
+Util.send_qq_channel_message("hello")
+
 # sp = subprocess.Popen("D:/Hotta/WmGpLaunch/WmgpLauncher.exe")
 #
 #
