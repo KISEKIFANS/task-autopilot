@@ -1,0 +1,5 @@
+000000,MATCH_YES,000100,block,2,等待2秒
+000100,DNF_000000.png,click(-1570@0),block,2,点击人
+000150,DNF_000000.png,click(-1420@0),block,2,点击人2
+000160,DNF_000000.png,click(-2150@0),block,2,点击人2
+000200,MATCH_YES,000000,block,0,循环

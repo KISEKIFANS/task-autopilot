@@ -1,8 +1,11 @@
 [global]
-exec_mode = normal        # normal step
-capture_mode = disk       # disk ram
-games_exclude = ZenlessZoneZero,PunishingGrayRaven,AetherGazer,HonkaiImpact3rd,GuiLongChao,TowerOfFantasy,StarRail
-backup=SnowBreak,ZenlessZoneZero,PunishingGrayRaven,AetherGazer,HonkaiImpact3rd,GuiLongChao,TowerOfFantasy,StarRail
+exec_mode = normal     # normal, step #普通模式和逐步调式模式
+bot_enable = False        # True, False  #是否启用机器人报告执行情况
+games_exclude =           # 排除特定游戏，为空表示下面的game全部执行
+
+bot_appid = 102708242
+bot_secret = TEzkVG1nZL7tfSF2pcPD1pdRF4tiXMB0
+bot_channel_id = 682867287
 
 # The follows are NOT recommended to modify
 score_threshold = 0.05
@@ -11,11 +14,19 @@ script_path = ./scripts
 log_path = ./logs
 
 [game]
-SnowBreak=D:/Games/Snow/snow_launcher.exe
-ZenlessZoneZero=D:/Games/ZenlessZoneZero/ZenlessZoneZero Game/ZenlessZoneZero.exe
-PunishingGrayRaven=D:/Games/Punishing Gray Raven/Punishing Gray Raven Game/PGR.exe
-AetherGazer=D:/Games/AetherGazerStarter/AetherGazer/AetherGazer.exe
+### @开头表示拉起第三方程序，原神和鸣潮推荐用BetterGI和okww清日常
+
+ZenlessZoneZero=D:/ZenlessZoneZero/ZenlessZoneZero Game/ZenlessZoneZero.exe
 HonkaiImpact3rd=D:/Program Files/miHoYo Launcher/games/Honkai Impact 3rd Game/BH3.exe
-GuiLongChao=D:/Games/GuiLongChao/game/GuiLongChao.exe
-TowerOfFantasy=D:/Games/Hotta/WmGpLaunch/WmgpLauncher.exe
+AetherGazer=D:/Games/AetherGazerStarter/AetherGazer/AetherGazer.exe
 StarRail=D:/Games/Star Rail/Game/StarRail.exe
+DuetNightAbyss=D:/Games/Duet Night Abyss/DNA Game/EM.exe
+TowerOfFantasy=D:/Games/Hotta/WmGpLaunch/WmgpLauncher.exe
+
+
+### 已弃坑
+PunishingGrayRaven=D:/Games/Punishing Gray Raven/Punishing Gray Raven Game/PGR.exe
+GuiLongChao=D:/Games/GuiLongChao/game/GuiLongChao.exe
+
+### 托管
+GenshinImpact_bilibili=@D:/Portable Software/BetterGI/BetterGI.exe startOneDragon

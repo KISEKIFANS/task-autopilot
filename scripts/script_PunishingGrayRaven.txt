@@ -15,7 +15,7 @@
 000800,PunishingGrayRaven_000800.png,click,block,5,领取体力
 000900,MATCH_YES,*esc,no_action,2,确认结果
 001000,PunishingGrayRaven_001000.png,click(80@0),block,5,增加体力
-001100,PunishingGrayRaven_001100.png,click,block,5,增加一瓶
+001100,PunishingGrayRaven_001100.png,click,001200,5,增加一瓶
 001200,MATCH_YES,*j,no_action,2,确认增加
 001300,MATCH_YES,*esc,no_action,2,确认增加结果
 001400,MATCH_YES,*esc,no_action,2,退出至日活页面
@@ -37,15 +37,15 @@
 002800,MATCH_YES,*esc,no_action,2,退出至宿舍
 002900,MATCH_YES,*esc,no_action,2,退出至主画面
 
-003000,PunishingGrayRaven_003000.png,click,block,5,进入公会
-003100,MATCH_YES,*a,no_action,1,向左走
-003200,MATCH_YES,*a,no_action,1,向左走
-003300,MATCH_YES,*a,no_action,1,向左走
-003400,MATCH_YES,*w,no_action,1,向上走
-003500,PunishingGrayRaven_003500.png,003600,003900,5,寻找算一签
-003600,PunishingGrayRaven_003500.png,click,block,5,算一签
-003700,MATCH_YES,*esc,no_action,2,退出算签结果
-003800,MATCH_YES,*esc,no_action,2,退出至主画面
+#003000,PunishingGrayRaven_003000.png,click,block,5,进入公会
+#003100,MATCH_YES,*a,no_action,1,向左走
+#003200,MATCH_YES,*a,no_action,1,向左走
+#003300,MATCH_YES,*a,no_action,1,向左走
+#003400,MATCH_YES,*w,no_action,1,向上走
+#003500,PunishingGrayRaven_003500.png,003600,003900,5,寻找算一签
+#003600,PunishingGrayRaven_003500.png,click,block,5,算一签
+#003700,MATCH_YES,*esc,no_action,2,退出算签结果
+#003800,MATCH_YES,*esc,no_action,2,退出至主画面
 
 003900,PunishingGrayRaven_000000.png,click(2000@700),block,5,进入采购
 004000,PunishingGrayRaven_004000.png,click,block,5,切换至补给包
@@ -53,10 +53,10 @@
 004200,PunishingGrayRaven_004200.png,click,block,5,购买日常体力药
 004300,PunishingGrayRaven_004300.png,click,block,5,确认购买
 004400,MATCH_YES,*esc,no_action,2,退出购买结果
-004500,MATCH_YES,home,no_action,2,退出至主画面
+004500,MATCH_YES,*esc,no_action,2,退出至主画面
 
 005100,PunishingGrayRaven_000000.png,click(2300@700),block,5,进入战斗菜单
-005200,PunishingGrayRaven_005200.png,005290,005250,3,尝试进入限时活动
+#005200,PunishingGrayRaven_005200.png,005290,005250,3,尝试进入限时活动
 
 005250,PunishingGrayRaven_005250.png,click,block,5,进入资源
 005260,PunishingGrayRaven_005260.png,click,block,5,进入拟战场域
@@ -68,26 +68,27 @@
 005350,PunishingGrayRaven_005350.png,click,block,5,MAX次数
 005400,PunishingGrayRaven_005400.png,click,block,5,自动作战
 005500,MATCH_YES,*j,no_action,2,确认作战结果
-005600,MATCH_YES,home,no_action,2,退出至主画面
+005600,PunishingGrayRaven_Z00100.png,click,block,5,退出至主画面
 
 005700,PunishingGrayRaven_000000.png,click(1800@1000),block,5,进入商店菜单
 005800,PunishingGrayRaven_005800.png,click,block,5,购买人物碎片
 005900,PunishingGrayRaven_005900.png,click,block,5,确认购买
-005950,MATCH_YES,home,no_action,2,退出至主画面
+005940,MATCH_YES,005950,no_action,2,等待2秒
+005950,PunishingGrayRaven_Z00100.png,click,block,5,退出至主画面
 
 006000,PunishingGrayRaven_006000.png,click,block,5,进入日活页面
 006100,PunishingGrayRaven_006100.png,click,block,5,完成日活任务
 006200,MATCH_YES,*esc,no_action,2,退出任务奖励
 006300,PunishingGrayRaven_006300.png,click,block,5,领取日活奖励
 006400,MATCH_YES,*esc,no_action,2,退出日活奖励
-006500,MATCH_YES,home,no_action,2,退出至主画面
+006500,PunishingGrayRaven_Z00100.png,click,block,5,退出至主画面
 
 
 004600,PunishingGrayRaven_000000.png,click(666@233),block,5,进入大月卡
 004700,PunishingGrayRaven_000000.png,click(200@900),block,5,至换评定任务
-004800,PunishingGrayRaven_004800.png,click,block,5,领取每日评定奖励
+004800,PunishingGrayRaven_004800.png,click,006600,5,领取每日评定奖励
 004900,MATCH_YES,*esc,no_action,2,退出奖励结果
-005000,MATCH_YES,home,no_action,2,退出至主画面
+005000,PunishingGrayRaven_Z00100.png,click,block,5,退出至主画面
 
 006600,MATCH_YES,*alt+*f4,no_action,2,退出游戏
 

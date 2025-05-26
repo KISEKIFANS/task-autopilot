@@ -12,19 +12,22 @@
 000310,MATCH_YES,000700,no_action,2,进入主画面
 
 #循环领各类奖励
-000320,AetherGazer_000400.png,click,block,10,领各类奖励
+000320,AetherGazer_000400.png,click,000325,5,领各类奖励
+000325,AetherGazer_000325.png,click(0@750),000330,5,领限时签到奖励
+000330,AetherGazer_000450.png,click(0@400),000700,5,尝试领累计登录奖励
+000340,AetherGazer_000400.png,click,000700,5,确认登录奖励
+000350,AetherGazer_000450.png,click(0@1060),000700,5,退出领累计登录奖励
 
-#000350,MATCH_YES,000400,block,5,等待五秒
-#000400,AetherGazer_000400.png,click,block,10,领签到奖励
-#000450,MATCH_YES,000500,block,3,等待三秒
-#000500,AetherGazer_000400.png,click,block,10,领月卡
-#000550,MATCH_YES,000600,block,3,等待三秒
-#000600,AetherGazer_000400.png,click,block,10,领百宝囊
-#000610,MATCH_YES,000650,block,3,等待三秒
-#000650,AetherGazer_000400.png,click,000700,10,领百宝囊阶段奖励
-
-000700,AetherGazer_000700.png,click,000320,3,进入主画面
-000710,MATCH_YES,000800,no_action,2,进入主画面
+#20251213修改
+##000700,AetherGazer_000700.png,click(0@150),000320,3,进入主画面
+000700,AetherGazer_000702.png,click(0@150),000705,3,判断是否已领取所有登录奖励
+000701,MATCH_YES,000750,no_action,2,已领取所有登录奖励，开始去广告
+000705,AetherGazer_000701.png,000706,000707,2,未成功匹配，查看是否已在广告画面
+000706,MATCH_YES,000750,no_action,1,已在广告画面，开始去广告
+000707,AetherGazer_001500.png,000708,000709,3,未在广告画面，查看是否已在主画面
+000708,MATCH_YES,000800,no_action,1,已在主画面，跳转进入商店步骤
+000709,MATCH_YES,000320,no_action,1,未在主画面，继续领奖励
+#000710,MATCH_YES,000800.png,no_action,2,进入主画面
 
 #循环去广告
 #000750,MATCH_YES,click(*2100@*1680),no_action,2,去广告
@@ -48,9 +51,15 @@
 #001670,AetherGazer_001670.png,click,block,10,确认使用
 001700,AetherGazer_001700.png,click,block,10,返回主界面
 
-#打120体力活动副本
+#选择是否走A分支，若不走，直接注释下行（适用于活动材料已刷够，改刷经验书）
+#001750,MATCH_YES,A01800,no_action,2,2秒后进入A分支
+
+#打150体力活动副本
 001800,AetherGazer_001500.png,click(0@-850),block,10,进入活动页面
-001900,AetherGazer_001900.png,click,block,10,选择活动副本
+001900,AetherGazer_001900.png,001970,001950,10,尝试选择活动副本
+001950,AetherGazer_001950.png,slip(0@-1150),block,5,下滑画面
+001960,MATCH_YES,001970,no_action,3,等待3秒
+001970,AetherGazer_001900.png,click,block,5,选择活动副本
 002000,AetherGazer_002000.png,click,block,10,前往挑战
 002100,AetherGazer_002100.png,click,block,10,选择图1
 002200,AetherGazer_002200.png,click,block,10,增加1次扫荡次数
@@ -64,8 +73,24 @@
 002900,AetherGazer_002800.png,click(-150@0),block,10,返回上一级
 003000,AetherGazer_003000.png,click,block,10,领取活动物品
 003100,AetherGazer_000400.png,click,block,10,确认领取
-
 003200,AetherGazer_001400.png,click,block,10,返回主界面
+003250,MATCH_YES,003300,no_action,2,跳转至领取公会奖励
+
+#打160体力经验副本
+A01800,AetherGazer_001500.png,click,block,10,进入作战页面
+A01900,AetherGazer_A01900.png,click,block,10,选择物资副本
+A01970,AetherGazer_A01970.png,click,A02000,5,选择模拟作战
+A02000,AetherGazer_A02000.png,click,block,5,再次选择模拟作战
+A02100,AetherGazer_A02100.png,click,block,10,选择图6
+A02200,AetherGazer_002200.png,click,block,10,增加1次扫荡次数
+A02300,AetherGazer_002200.png,click,block,10,增加1次扫荡次数
+A02400,AetherGazer_002200.png,click,block,10,增加1次扫荡次数
+A02500,AetherGazer_002500.png,click,block,10,扫荡
+A02600,AetherGazer_002600.png,click,block,10,确认扫荡
+A02700,AetherGazer_002700.png,click,block,10,确认扫荡结果
+A02800,AetherGazer_002800.png,click(-150@0),block,10,返回上一级
+A02900,AetherGazer_002800.png,click(-150@0),block,10,返回上一级
+A03200,AetherGazer_001400.png,click,block,10,返回主界面
 
 #领取公会奖励
 003300,AetherGazer_001500.png,click(-720@90),block,5,进入公会
@@ -85,7 +110,7 @@
 003870,AetherGazer_003870.png,click,block,5,快速选中人物
 003880,AetherGazer_003880.png,click,block,5,派遣出发
 003890,MATCH_YES,003860,no_action,2,循环派遣
-003895,AetherGazer_003895.png,click,block,5,退出派遣菜单
+003895,AetherGazer_000000.png,click(300@100),block,3,退出派遣菜单
 003896,AetherGazer_003896.png,*esc,block,2,返回上一级
 003897,AetherGazer_003896.png,*esc,block,2,返回主菜单
 

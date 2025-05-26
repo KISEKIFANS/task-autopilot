@@ -2,20 +2,25 @@
 
 #进游戏
 000100,GuiLongChao_000100.png,click,block,60,退出公告
-000200,GuiLongChao_000200.png,click,block,10,开始游戏
-000210,GuiLongChao_000210.png,click(0@400),block,10,领月卡奖励
+000200,GuiLongChao_000200.png,click,block,20,开始游戏
+#000210,GuiLongChao_000210.png,click,block,10,领月卡奖励
+000205,MATCH_YES,000210,no_action,10,等待10秒
+000210,GuiLongChao_000000.png,click(1200@1300),block,5,领月卡奖励
 000220,MATCH_YES,*esc,block,2,确认结果
 000250,GuiLongChao_000250.png,click,000300,10,领签到奖励
 000260,MATCH_YES,*esc,block,2,确认结果
 000270,MATCH_YES,*esc,block,2,确认结果
-000300,GuiLongChao_000300.png,*f1,block,5,进入日活菜单
-000400,GuiLongChao_000400.png,000700,000500,2,寻找5次宝库任务
+000300,GuiLongChao_000300.png,000350,000310,5,判断是否在主界面
+000310,GuiLongChao_000310.png,click,block,3,循环取消广告
+000320,MATCH_YES,000300,no_action,1,继续判断
 
+000350,GuiLongChao_000300.png,*f1,block,5,进入日活菜单
+000400,GuiLongChao_000400.png,000700,000500,2,寻找5次宝库任务
 000500,GuiLongChao_000500.png,click(1430@260),block,5,点击刷新
 000600,MATCH_YES,000400,no_action,1,继续寻找
 
 000700,GuiLongChao_000400.png,click(240@130),block,1,进入5次宝库任务
-000800,GuiLongChao_000800.png,click,block,5,进入金币关
+000800,GuiLongChao_000800.png,click,block,5,进入经验关
 000900,GuiLongChao_000900.png,click,block,5,快速挑战
 001000,GuiLongChao_001000.png,click,block,5,增加1次挑战次数
 001100,GuiLongChao_001000.png,click,block,5,增加1次挑战次数
@@ -40,10 +45,13 @@
 
 002700,GuiLongChao_002700.png,click,block,5,领取每日任务奖励
 002750,GuiLongChao_002750.png,click,block,5,退出每日任务奖励
+002760,GuiLongChao_000A00.png,click(0@450),002800,2,领取升级奖励
 002800,GuiLongChao_002700.png,click,block,5,领取每日任务奖励
 002850,GuiLongChao_002750.png,click,block,5,退出每日任务奖励
+002860,GuiLongChao_000A00.png,click(0@450),003000,2,领取升级奖励
 
 003000,GuiLongChao_003000.png,click,003200,2,循环领取任务经验
+003050,GuiLongChao_000A00.png,click(0@450),003100,2,领取升级奖励
 003100,MATCH_YES,003000,no_action,1,继续下一次点击
 003200,GuiLongChao_001900.png,click,block,10,返回上一级
 

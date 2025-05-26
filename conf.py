@@ -5,9 +5,8 @@ date = time.strftime('%Y-%m-%d', time.localtime())
 class Conf:
 
     conf_file = f"./conf.txt"
-
     exec_mode = ""
-    capture_mode = ""
+    bot_enable = ""
     score_threshold = 0
     screenshot_path = ""
     log_path = ''
@@ -16,6 +15,10 @@ class Conf:
     games_exclude = []
     game_script_status_dict = {} # READY RUNNING WAIT_TO_RETRY ERR_OCCURRED COMPLETED
     game_launcher_dict = {}
+
+    bot_appid = ""
+    bot_secret = ""
+    bot_channel_id = ""
 
     script_path = ""
     game = ""

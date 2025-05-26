@@ -4,8 +4,11 @@ import os
 import pydirectinput
 from conf import *
 import subprocess
+import requests
+import json
 
 class Util:
+
 
     @staticmethod
     def print_and_log(txt):
@@ -19,6 +22,52 @@ class Util:
         current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
         log_writer.writelines(f'[{current_time}] {txt}\n')
         log_writer.flush()
+
+    @staticmethod
+    def send_qq_channel_message(txt):
+
+        if not eval(Conf.bot_enable):
+            return
+
+        try:
+            # #get token
+            # url = "https://bots.qq.com/app/getAppAccessToken"
+            # header = {'Content-Type': 'application/json'}
+            # data = {"appId": Conf.bot_appid,
+            #         "clientSecret": Conf.bot_secret
+            #         }
+            # access_token = json.loads(requests.post(url=url, headers=header, data=json.dumps(data)).text)[
+            #     "access_token"]
+            #
+            # #use token to send qq channel message
+            # url = f"https://api.sgroup.qq.com/channels/{Conf.bot_channel_id}/messages"
+            # header = {'Content-Type': 'application/json',
+            #       'Authorization': f'QQBot {access_token}'
+            #       }
+            # data = {
+            #     "message": txt,
+            #     "msg_type": 0
+            # }
+
+            url = f"https://fastapi.chat.csu.edu.cn/qq_channel/send_message"
+            header = {
+                'Content-Type': 'application/json',
+                'accept': 'application/json',
+                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ6bWxpIiwiZXhwIjo0OTExODcwMzM3fQ.ztHfdyB9oadee8HvLHib7lku3v3XVGSgeOotyRnEJUU'
+                  }
+            data = {
+                "message": txt,
+                "bot_channel_id": Conf.bot_channel_id,
+                "bot_appid": Conf.bot_appid,
+                "bot_secret": Conf.bot_secret,
+                "msg_type": 0
+            }
+
+            result = requests.post(url=url, headers=header, data=json.dumps(data)).text
+            #Util.print_and_log(result)
+
+        except Exception as e:
+            Util.print_and_log("ERR in send qq channel message: " + str(e))
 
     @staticmethod
     def init(new_game):
@@ -41,10 +90,16 @@ class Util:
             try_count = 0
             while try_count <3 :
                 try:
-                    subprocess.Popen(Conf.game_launcher)
+                    if Conf.game_launcher.startswith('@'):
+                        outer_cmd = Conf.game_launcher.split('@')[1]
+                        Util.print_and_log(f"尝试调用并等待: {outer_cmd}")
+                        subprocess.run(outer_cmd)
+                    else:
+                        Util.print_and_log(f"尝试打开程序: {Conf.game_launcher}")
+                        subprocess.Popen(Conf.game_launcher)
                     break
                 except Exception as e:
-                    Util.print_and_log(f"未成功打开游戏，稍后重试: {e}")
+                    Util.print_and_log(f"未成功执行，稍后重试: {e}")
                     time.sleep(2)
                     try_count += 1
             if try_count == 3:
@@ -84,13 +139,17 @@ class Util:
 
         # load dict to conf
         Conf.exec_mode = load_global_dict.get('exec_mode')
-        Conf.capture_mode = load_global_dict.get('capture_mode')
+        Conf.bot_enable = load_global_dict.get('bot_enable')
         Conf.score_threshold = float(load_global_dict.get('score_threshold'))
         Conf.screenshot_path = load_global_dict.get('screenshot_path')
         Conf.log_path = load_global_dict.get('log_path')
         Conf.log_file = f"{Conf.log_path}/log.{date}.txt"
         Conf.script_path = load_global_dict.get('script_path')
         Conf.game_launcher_dict = dict(load_game_dict)
+
+        Conf.bot_appid = load_global_dict.get("bot_appid")
+        Conf.bot_secret = load_global_dict.get("bot_secret")
+        Conf.bot_channel_id = load_global_dict.get("bot_channel_id")
 
         for key in load_game_dict.keys():
             Conf.games.append(key)
@@ -117,8 +176,8 @@ class Util:
 
         Util.print_and_log(f"配置文件加载完成")
         Util.print_and_log(f"执行模式：{Conf.exec_mode}")
-        Util.print_and_log(f"截图模式：{Conf.capture_mode}")
         Util.print_and_log(f"评分阈值：{Conf.score_threshold}")
+        Util.print_and_log(f"机器人报告：{Conf.bot_enable}")
         Util.print_and_log(f"截图文件夹路径：{Conf.screenshot_path}")
         Util.print_and_log(f"日志文件夹路径：{Conf.log_path}")
         Util.print_and_log(f"脚本文件夹路径：{Conf.script_path}")
@@ -156,6 +215,7 @@ class Util:
         height, width, channel = img_target.shape
 
         # 匹配结果
+        # 可考虑尝试转灰度图增加匹配速度
         result = cv2.matchTemplate(img_current_screen, img_target, cv2.TM_SQDIFF_NORMED)
 
         # 匹配分数，使用TM_SQDIFF_NORMED时越低越准确
@@ -201,6 +261,14 @@ class Util:
         pyautogui.moveTo(point_05[0], point_05[1], duration=0.5)
         pyautogui.moveTo(point_06[0], point_06[1], duration=0.5)
         pyautogui.mouseUp(point_06[0], point_06[1])
+
+    @staticmethod
+    def mouse_slip(position, dis_x, dis_y):
+        point_start = int(position[0]), int(position[1])
+        point_end = point_start[0] + dis_x, point_start[1] + dis_y
+        pyautogui.mouseDown(point_start[0], point_start[1])
+        pyautogui.moveTo(point_end[0], point_end[1], duration=0.5)
+        pyautogui.mouseUp(point_end[0], point_end[1])
 
     @staticmethod
     def press_key(key):
@@ -285,6 +353,7 @@ class Util:
                 find_img_result = Util.find_img(seq, img_target, timeout, mission)
                 if find_img_result == "IMG_TARGET_NOTFOUND" or find_img_result == "DIRECT_NO":
                     if action_img_not_found == 'block':
+                        Util.send_qq_channel_message(f'执行{Conf.game}日活脚本的任务{seq}时无法匹配到图片，请进行相关检查~')
                         seq_new = input(f"程序已挂起，请调整脚本及图片。调整完毕后输入任务序号以继续执行（或直接回车执行最近一次任务{seq}，或输入exit退出）： ")
                         Util.log(f"程序已挂起，请调整脚本及图片。调整完毕后输入任务序号以继续执行（或直接回车执行最近一次任务{seq}，或输入exit退出）： {seq_new}")
                         seqs = Util.get_all_seq()
@@ -346,9 +415,17 @@ class Util:
                         dis_x = int(distance.split('@')[0])
                         dis_y = int(distance.split('@')[1])
                         Util.mouse_slip_around(find_img_result, dis_x, dis_y)
+                        continue
+                    elif action_img_found.startswith('slip'):
+                        distance = action_img_found.split('(')[1].split(')')[0]
+                        dis_x = int(distance.split('@')[0])
+                        dis_y = int(distance.split('@')[1])
+                        Util.mouse_slip(find_img_result, dis_x, dis_y)
+                        continue
                     else:
+                        #press key
                         Util.press_key(action_img_found)
                         continue
 
-        #kill client if exists
+        #一些手游刚需通过启动器启动，如幻塔，此处可考虑退出后Kill掉弹出的启动器，未实现
         return "ALL_MISSION_COMPLETED"

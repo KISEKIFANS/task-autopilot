@@ -1,15 +1,17 @@
 #000000,MATCH_NO,no_action,block,0,调试语句
 
 #进游戏
-000100,HonkaiImpact3rd_000100.png,click,block,60,开始游戏
+000050,HonkaiImpact3rd_000050.png,click,000100,20,检查是否有更新
+000060,HonkaiImpact3rd_000050.png,click,000100,120,确认更新
+000100,HonkaiImpact3rd_000100.png,click,000050,60,开始游戏
 
-000200,HonkaiImpact3rd_000200.png,000500,000300,2,判断是否在签到页面
+000200,HonkaiImpact3rd_000200.png,000500,000300,5,判断是否在签到页面
 000300,HonkaiImpact3rd_000000.png,click(1275@1275),block,5,退出广告
 000400,MATCH_YES,000200,no_action,1,继续判断
 000500,HonkaiImpact3rd_000200.png,click,000700,5,领签到奖励
 000600,MATCH_YES,*esc,block,2,确认签到结果
 000650,MATCH_YES,000500,no_action,2,继续领签到奖励
-000700,HonkaiImpact3rd_000700.png,click,block,5,领月卡奖励
+000700,HonkaiImpact3rd_000700.png,click,000900,5,领月卡奖励
 000800,MATCH_YES,*esc,block,2,确认领月卡结果
 000850,HonkaiImpact3rd_000850.png,click,000900,2,判断是否有500水晶领取
 000860,MATCH_YES,*esc,block,2,确认领取结果
@@ -28,32 +30,42 @@
 001170,MATCH_YES,001150,no_action,1,继续判断
 
 001200,HonkaiImpact3rd_000900.png,click(-300@0),block,5,进入家园
-001300,HonkaiImpact3rd_001300.png,click,block,5,领取金币
-001350,MATCH_YES,001400,no_action,1,等待1秒
+001250,HonkaiImpact3rd_001250.png,click,001300,3,确认家园升级
+001300,HonkaiImpact3rd_001300.png,click,001350,5,领取金币
+001350,HonkaiImpact3rd_001350.png,click,001360,5,领取满金币
+001360,MATCH_YES,001400,no_action,1,等待1秒
 001400,HonkaiImpact3rd_001400.png,click,block,5,进入打工
 001500,HonkaiImpact3rd_001500.png,click,block,5,领取打工奖励
 001600,MATCH_YES,*esc,no_action,2,确认打工奖励
 001700,HonkaiImpact3rd_001700.png,click,block,5,进入一键打工
 001800,HonkaiImpact3rd_001800.png,click,block,5,确认一键打工
+001850,HonkaiImpact3rd_001850.png,click(400@300),001900,5,无视S+警告
 001900,MATCH_YES,*esc,no_action,2,退至上一级画面
 002000,HonkaiImpact3rd_002000.png,click,block,5,进入远征
+
 002100,HonkaiImpact3rd_002100.png,click,block,5,领取远征奖励
 002200,MATCH_YES,*esc,no_action,2,确认远征奖励
 002300,HonkaiImpact3rd_002300.png,click,block,5,进入一键远征
 002400,HonkaiImpact3rd_002400.png,click,block,5,进入6场远征(约120体力)
+
 002500,MATCH_YES,home,no_action,2,返回主菜单
 
 002600,HonkaiImpact3rd_000000.png,click(2400@720),block,5,进入作战页面
 002700,HonkaiImpact3rd_002700.png,click,block,5,进入材料关
+002710,HonkaiImpact3rd_002710.png,click,block,5,进入装备材料关
+002720,HonkaiImpact3rd_000000.png,click(1985@990),block,5,装备材料关一键减负
+002730,HonkaiImpact3rd_002730.png,click,block,5,确认减负
+002740,MATCH_YES,*esc,no_action,2,确认紫菜奖励
+002750,MATCH_YES,*esc,no_action,2,返回上一级
 002800,HonkaiImpact3rd_002800.png,click,block,5,进入紫菜关卡
 002900,HonkaiImpact3rd_002900.png,click,block,5,紫菜关卡一键减负
 003000,HonkaiImpact3rd_003000.png,click,block,5,确认减负
 003100,MATCH_YES,*esc,no_action,2,确认紫菜奖励
-003200,HonkaiImpact3rd_003200.png,click,block,5,加1次紫菜关卡挑战次数
-003300,HonkaiImpact3rd_003300.png,click,block,5,确认增加
-003400,HonkaiImpact3rd_003400.png,click,block,5,紫菜关卡一键减负
-003500,HonkaiImpact3rd_003000.png,click,block,5,确认减负
-003600,MATCH_YES,*esc,no_action,2,确认紫菜奖励
+#003200,HonkaiImpact3rd_003200.png,click,block,5,加1次紫菜关卡挑战次数
+#003300,HonkaiImpact3rd_003300.png,click,block,5,确认增加
+#003400,HonkaiImpact3rd_003400.png,click,block,5,紫菜关卡一键减负
+#003500,HonkaiImpact3rd_003000.png,click,block,5,确认减负
+#003600,MATCH_YES,*esc,no_action,2,确认紫菜奖励
 003700,MATCH_YES,home,no_action,2,返回主菜单
 
 003800,HonkaiImpact3rd_000000.png,click(111@266),block,5,进入日活页面
