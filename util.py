@@ -49,11 +49,11 @@ class Util:
             #     "msg_type": 0
             # }
 
-            url = f"https://fastapi.chat.csu.edu.cn/qq_channel/send_message"
+            url = f"https://"
             header = {
                 'Content-Type': 'application/json',
                 'accept': 'application/json',
-                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ6bWxpIiwiZXhwIjo0OTExODcwMzM3fQ.ztHfdyB9oadee8HvLHib7lku3v3XVGSgeOotyRnEJUU'
+                'Authorization': 'Bearer '
                   }
             data = {
                 "message": txt,
