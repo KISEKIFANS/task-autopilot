@@ -1,11 +1,11 @@
 [global]
 exec_mode = normal     # normal, step #普通模式和逐步调式模式
-bot_enable = False        # True, False  #是否启用机器人报告执行情况
+bot_enable = True        # True, False  #是否启用机器人报告执行情况
 games_exclude =           # 排除特定游戏，为空表示下面的game全部执行
 
-bot_appid = 102708242
-bot_secret = TEzkVG1nZL7tfSF2pcPD1pdRF4tiXMB0
-bot_channel_id = 682867287
+bot_appid =
+bot_secret =
+bot_channel_id =
 
 # The follows are NOT recommended to modify
 score_threshold = 0.05
